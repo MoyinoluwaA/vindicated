@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+.nav-wrapper{
+  border-bottom: 1px solid #80808045;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.brand-logo {
+  margin-left: 2%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.banner {
+  background-color:#0d47a1;
+  height: 450px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.banner-center {
+  margin: 0px auto;
+  width: 65%;
+  padding: 5em 2em;
+}
+
+.what-we-do h4 {
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.what-we-do-section {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 90%;
+  margin: 0px auto;
 }
 
-.App-link {
-  color: #61dafb;
+.what-we-do-text {
+  max-width: 50%;
+  line-height: 2.2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.what-we-do-image {
+  width: 50%;
+  height: auto;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+}
+
+.Plan-heading {
+  padding: 1em;
+}
+
+.Plans {
+  margin-bottom: 0px;
+}
+
+.testimonial h4 {
+  margin-top: 0px;
+  padding: 1em;
+}
+
+.testimonial-body {
+  width: 75%;
+  margin: 0px auto;
+}
+
+.register, .login {
+  width: 40%;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 0 4px 2px rgba(38, 153, 251, .18);
+}
+
+.register-title {
+  display: block;
+  text-align: center;
+  font-size: 40px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+}
+
+.buttonForm {
+  width: 100%;
+  margin-bottom: 10px;
 }
