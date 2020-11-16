@@ -1,0 +1,2 @@
+# vindicated
+For vindicated investment
