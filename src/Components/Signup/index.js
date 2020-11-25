@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useHistory} from 'react-router-dom';
 
 
 import Input from '../TextInput/index';
@@ -15,6 +15,7 @@ const Index = () => {
     const [errorEmail, setErrorEmail] = useState('');
     const [errorPassword, setErrorPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const history = useHistory()
 
     const handleChange = (e) => {
         const {name,value}= e.currentTarget;
@@ -33,8 +34,19 @@ const Index = () => {
 
     const handleGoogle = async (e) => {
         e.preventDefault();
-        const {user} = await auth.signInWithPopup(provider);
-        console.log (user)
+        try {
+            const {user} = await auth.signInWithPopup(provider);
+            console.log (user)
+            const profile = firestore.collection('users').doc(user.uid)
+            await profile.set({
+                fullname: user.displayName,
+                email: user.email
+            })
+            localStorage.setItem('uid', user.uid)
+            history.push('/login')
+        } catch {
+
+        }
     }
 
     const handleSignup = async (e) => {
@@ -50,7 +62,10 @@ const Index = () => {
                     fullname,
                     email
                 })
+                localStorage.setItem('uid', user.uid)
+                history.push('/login')
             }
+            
         } catch (error) {
             if(error.code === 'auth/weak-password'){
                 setErrorPassword (error.message)

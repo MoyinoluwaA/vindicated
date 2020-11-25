@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {NavLink} from 'react-router-dom' 
+import {NavLink, useHistory} from 'react-router-dom' 
 import Input from '../TextInput/index';
 import Button from '../Button/index';
 import {auth} from '../../config/firebase'
@@ -10,6 +10,7 @@ const Index = () => {
     const [errorEmail, setErrorEmail] = useState('');
     const [errorPassword, setErrorPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const history = useHistory()
 
     const handleChange = (e) => {
         const {name, value} = e.currentTarget;
@@ -32,7 +33,10 @@ const Index = () => {
                 setErrorMessage('All fields are required')
             }
             const {user} = await auth.signInWithEmailAndPassword(email, password);
-            console.log(user)
+            // To store user data on local storage
+            localStorage.setItem('uid', user.uid)
+            // To redirect users from login to dashboard when the login button is clicked
+            history.push('/dashboard')
         } 
         
         catch(error){

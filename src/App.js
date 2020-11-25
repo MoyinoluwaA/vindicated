@@ -4,10 +4,13 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Landing from './Components/Landing/index';
 import Signup from './Components/Signup/index';
 import Login from './Components/Login/index'
+import Dashboard from './Components/Dashboard/Home'
+
 
 import './App.css';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Switch>
@@ -19,6 +22,9 @@ function App() {
         </Route>
         <Route path='/login'>
           <Login />
+        </Route>
+        <Route path='/dashboard'>
+          <Dashboard  />
         </Route>
       </Switch>
     </BrowserRouter>
