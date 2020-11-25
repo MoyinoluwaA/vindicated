@@ -3,7 +3,8 @@
 }
 
 .brand-logo {
-  margin-left: 2%;
+  width: 20%;
+  margin-left: 20px;
 }
 
 .banner {
@@ -58,9 +59,35 @@ img {
 }
 
 .testimonial-body {
-  width: 75%;
+  width: 65%;
   margin: 0px auto;
 }
+
+.page-footer {
+  padding-top: 10px;
+}
+
+.container {
+  margin:0;
+  padding: 0;
+  width: 100%;
+}
+
+.row{
+  margin-left: 40px;
+}
+
+.footer-container {
+  width: 100%;
+}
+/* .cover {
+  background-image: url('./logo1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  /* opacity: 0.3; */
+
 
 .register, .login {
   width: 40%;
@@ -71,9 +98,10 @@ img {
 
 .register-title {
   display: block;
-  text-align: center;
-  font-size: 40px;
+  width: 12%;
+  margin: 0 auto;
 }
+
 
 input {
   width: 100%;
@@ -88,4 +116,12 @@ input {
 .dashboardsidenav li a {
   color: white;
   margin: 50px 0;
+}
+
+.navsidebar {
+  height: 100vh;
+}
+
+.divider {
+  background: black important;
 }

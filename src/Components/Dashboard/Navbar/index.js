@@ -31,7 +31,7 @@ const Index= () =>{
     return(
         <Navbar
         alignLinks="right"
-        brand={<a className="brand-logo black-text" href="/">VINDICATED INVESTMENT</a>}
+        brand={<a  href="/"><img src="/logo.png" alt="logo" className="brand-logo" /></a>}
         id="mobile-nav"
         menuIcon={<Icon className="blue-text">menu</Icon>}
         options={{

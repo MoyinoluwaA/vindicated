@@ -10,7 +10,7 @@ function Index () {
             <Navbar  />
             <div>
                 <Row>
-                    <Col className="blue darken-4" m={2} >
+                    <Col className="navsidebar blue darken-4" m={2} >
                     <Dashboardnav />
                     </Col>
                     <Col m={10} >

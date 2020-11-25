@@ -5,6 +5,7 @@ import Herosection from '../Herosection/index';
 import About from '../About/index';
 import Plans from '../Plans/index';
 import Testimonial from '../Testimonial/index';
+import Faq from '../FAQ/index'
 import Footer from '../Footer/index';
 
 
@@ -16,6 +17,7 @@ const Index = () => {
             <About />
             <Plans  />
             <Testimonial />
+            <Faq />
             <Footer />
         </div>
     )

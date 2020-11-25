@@ -54,33 +54,35 @@ const Index = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="login">
-            <NavLink to="/" className="register-title">Vindicated Investment</NavLink>
-                {errorMessage ? <p className="errorMsg center-align red-text">{errorMessage}</p> : ''}
-                <Input 
-                    placeholder="Enter Email Address"
-                    type="email"
-                    label="Email address"
-                    name="email"
-                    value={email}
-                    handleChange={handleChange}
-                    handleKeyUp={handleKeyUp}
-                    error={errorEmail}
-                />
-                <Input 
-                    placeholder="Enter password"
-                    type="password"
-                    label="Password"
-                    name="password"
-                    value={password}
-                    handleChange={handleChange}
-                    handleKeyUp={handleKeyUp}
-                />
-                <Button text="Log in" className="buttonForm blue darken-4"/>
-                <p className="center-align">Don't have an account? <a href="/register">Register</a></p>
-            </div>
-        </form>
+        <div className="cover">
+            <form onSubmit={handleSubmit}>
+                <div className="login">
+                <NavLink  to="/"><img src="/logo.png" alt="logo" className="register-title" /></NavLink>
+                    {errorMessage ? <p className="errorMsg center-align red-text">{errorMessage}</p> : ''}
+                    <Input 
+                        placeholder="Enter Email Address"
+                        type="email"
+                        label="Email address"
+                        name="email"
+                        value={email}
+                        handleChange={handleChange}
+                        handleKeyUp={handleKeyUp}
+                        error={errorEmail}
+                    />
+                    <Input 
+                        placeholder="Enter password"
+                        type="password"
+                        label="Password"
+                        name="password"
+                        value={password}
+                        handleChange={handleChange}
+                        handleKeyUp={handleKeyUp}
+                    />
+                    <Button text="Log in" className="buttonForm blue darken-4"/>
+                    <p className="center-align">Don't have an account? <a href="/register">Register</a></p>
+                </div>
+            </form>
+        </div>
     )
 };
 
