@@ -2,6 +2,13 @@
   border-bottom: 1px solid #80808045;
 }
 
+.link:hover {
+    text-decoration: underline;
+    color:white !important;
+    background-color: #0d47a1 !important;
+  
+}
+
 .brand-logo {
   width: 20%;
   margin-left: 20px;
@@ -68,17 +75,21 @@ img {
 }
 
 .container {
-  margin:0;
   padding: 0;
   width: 100%;
 }
 
-.row{
-  margin-left: 40px;
-}
 
 .footer-container {
   width: 100%;
+}
+
+.copyright {
+  margin-left: 10%;
+}
+
+.contact {
+  line-height: 25px;
 }
 /* .cover {
   background-image: url('./logo1.png');

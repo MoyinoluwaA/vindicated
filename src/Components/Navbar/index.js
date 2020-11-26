@@ -21,25 +21,26 @@ const Index= () =>{
             outDuration: 200,
             preventScrolling: true
         }}
+        fixed="true"
         className="white z-depth-0"
         >
     
-            <NavLink to="/" className="black-text">
+            <NavLink to="/" className="black-text link">
                 Home
             </NavLink>
-            <a href="#about" className="black-text">
+            <a href="#about" className="black-text link">
                 About
             </a>
-            <a href="#investment-plans" className="black-text">
+            <a href="#investment-plans" className="black-text link">
                 Plans
             </a>
-            <a href="#testimonial" className="black-text">
+            <a href="#testimonial" className="black-text link">
                 Testimonial
             </a>
-            <NavLink to="/login" className="black-text">
+            <NavLink to="/login" className="black-text link">
                 Login
             </NavLink>
-            <NavLink to="/register" className="black-text">
+            <NavLink to="/register" className="black-text link">
                 Register
             </NavLink>
         </Navbar>
