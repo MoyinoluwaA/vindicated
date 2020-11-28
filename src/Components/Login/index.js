@@ -79,6 +79,7 @@ const Index = () => {
                         handleKeyUp={handleKeyUp}
                     />
                     <Button text="Log in" className="buttonForm blue darken-4"/>
+                    <a href='/' className='red-text'>Forgot password</a>
                     <p className="center-align">Don't have an account? <a href="/register">Register</a></p>
                 </div>
             </form>

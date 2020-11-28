@@ -9,18 +9,24 @@ import {auth, firestore, provider} from '../../config/firebase';
 
 
 const Index = () => {
-    const [fullname, setFullname] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errorEmail, setErrorEmail] = useState('');
-    const [errorPassword, setErrorPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    
+    const [firstname, setFirstname] = useState('')
+    const [lastname, setLastname] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [errorEmail, setErrorEmail] = useState('')
+    const [errorPassword, setErrorPassword] = useState('')
+    const [errorMessage, setErrorMessage] = useState('')
     const history = useHistory()
 
+
+    // To update state with what users fill
     const handleChange = (e) => {
         const {name,value}= e.currentTarget;
-        if(name === 'fullname'){
-            setFullname(value);
+        if(name === 'firstname'){
+            setFirstname(value);
+        } else if (name === 'lastname'){
+            setLastname(value);
         } else if (name === 'email'){
             setEmail(value);
         } else if (name === 'password'){
@@ -28,10 +34,12 @@ const Index = () => {
         }
     }
 
+    // To prevent error messages from showing while typing to correct error
     const handleKeyUp = () => {
         setErrorMessage('')
     }
 
+    // To allow sign up with google on button
     const handleGoogle = async (e) => {
         e.preventDefault();
         try {
@@ -42,6 +50,8 @@ const Index = () => {
                 fullname: user.displayName,
                 email: user.email
             })
+            const firstname = user.displayName.split(' ')
+            console.log(firstname[0])
             localStorage.setItem('uid', user.uid)
             history.push('/login')
         } catch {
@@ -49,17 +59,19 @@ const Index = () => {
         }
     }
 
+    // To allow sign up by filling input fields
     const handleSignup = async (e) => {
         e.preventDefault();
         try{
-            if (!fullname || !password || !email){
+            if (!firstname || !lastname || !password || !email){
                 setErrorMessage ('All fields are required')
             }
             const {user} = await auth.createUserWithEmailAndPassword(email, password);
             if (user){
                 const profile = firestore.collection('users').doc(user.uid);
                 await profile.set({
-                    fullname,
+                    firstname,
+                    lastname,
                     email
                 })
                 localStorage.setItem('uid', user.uid)
@@ -84,11 +96,20 @@ const Index = () => {
                 <NavLink  to="/"><img src="/logo.png" alt="logo" className="register-title" /></NavLink>
                     {errorMessage ? <p className="errorMsg center-align red-text">{errorMessage}</p> : ''}
                     <Input 
-                        placeholder="Enter Fullname"
+                        placeholder="Enter First name"
                         type="text"
-                        label="Fullname"
-                        name="fullname"
-                        value={fullname}
+                        label="Firstname"
+                        name="firstname"
+                        value={firstname}
+                        handleChange={handleChange}
+                        handleKeyUp={handleKeyUp}
+                    />
+                    <Input 
+                        placeholder="Enter Last name"
+                        type="text"
+                        label="Lastname"
+                        name="lastname"
+                        value={lastname}
                         handleChange={handleChange}
                         handleKeyUp={handleKeyUp}
                     />

@@ -1,10 +1,21 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Navbar from '../Navbar/index'
 import Dashboardnav from '../Dashboardnav/index'
 
+import {useHistory} from 'react-router-dom'
 import {Row,Col} from 'react-materialize'
 
 function Index () {
+
+    const history = useHistory()
+    const uid = localStorage.getItem('uid')
+
+    useEffect (()=> {
+        if (!uid) {
+            history.push('/')
+        }
+    },[uid, history])
+
     return (
         <div>
             <Navbar  />

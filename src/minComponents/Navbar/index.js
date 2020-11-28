@@ -3,7 +3,7 @@ import 'materialize-css';
 import {Navbar, Icon} from 'react-materialize';
 import {NavLink} from 'react-router-dom';
 
-import {auth, firestore} from '../../../config/firebase'
+import {auth, firestore} from '../../config/firebase'
 
 const Index= () =>{
     const [user, setUser] = useState();
@@ -14,7 +14,7 @@ const Index= () =>{
             if (userData) {
                 const profile = await firestore.collection('users').doc(userData.uid).get()
                 if (profile.exists) {
-                setUser(profile.data().fullname)
+                setUser(profile.data().firstname)
                 }
             } else {
                 setUser ('')
