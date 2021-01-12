@@ -6,6 +6,7 @@ import { firestore } from '../../config/firebase'
 
 const Index = ()=> {
     const [name,setName]=useState('')
+    const [counter,setCounter] = useState(0)
     const [testimonial,setTestimonial]=useState('')
 
     const handleChange = (e) => {
@@ -28,7 +29,10 @@ const Index = ()=> {
             testimonial
         })
         console.log('Testimonial added')
+        const updatedCounter = counter + 1
+        setCounter(updatedCounter)
     }
+    console.log(counter)
 
     const handleDelete = (e) => {
         e.preventDefault()
@@ -66,7 +70,6 @@ const Index = ()=> {
                 <Button text="Delete" className="buttonForm blue darken-4" handleClick={handleDelete} />
                     
             </form>
-            <p>hello {testimonial} </p>
         </div>
     )
 }
