@@ -1,11 +1,10 @@
 import React from 'react'
-import {Collapsible, CollapsibleItem, Icon} from 'react-materialize'
+import {Collapsible, CollapsibleItem} from 'react-materialize'
 
-import Button from '../Button/index'
 
 const Index =() => {
     return (
-        <div className=" testimonial blue lighten-5" id="testimonial" >
+        <div className=" testimonial indigo accent-1" id="testimonial" >
             <h4 className="center-align"> Frequently Asked Questions? (FAQ) </h4>
             <div className="testimonial-body">
                 <Collapsible
@@ -62,7 +61,6 @@ const Index =() => {
                     </CollapsibleItem>
                 </Collapsible>
             </div>
-            <Button text="View more" className="blue white-text"/>
         </div>
     )
 }

@@ -6,7 +6,6 @@ import { firestore } from '../../config/firebase'
 
 const Index = ()=> {
     const [name,setName]=useState('')
-    const [counter,setCounter] = useState(0)
     const [testimonial,setTestimonial]=useState('')
 
     const handleChange = (e) => {
@@ -19,36 +18,26 @@ const Index = ()=> {
     }
 
     const uid = localStorage.getItem('uid')
-    const id= localStorage.getItem('id')
+    
     
     const handleAdd = (e)=> {
         e.preventDefault()
+        const testimonialList = []
         const data= firestore.collection('testimonial').add({
             uid,
             name,
             testimonial
         })
+        testimonialList.push(data)
         console.log('Testimonial added')
-        const updatedCounter = counter + 1
-        setCounter(updatedCounter)
     }
-    console.log(counter)
-
-    const handleDelete = (e) => {
-        e.preventDefault()
-        try {
-            const testimonial= firestore.collection('testimonial').doc(' ').delete()
-            console.log('testimonial deleted')
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    
 
     return (
         <div>
             <Navbar />
-            <h1>Welcome to your dashboard</h1>
-            <form>
+            <h1 id="welcome-dashboard">Welcome to your dashboard</h1>
+            <form id="testimonial-input">
                 <Input 
                     placeholder="Enter name"
                     type="text"
@@ -67,7 +56,6 @@ const Index = ()=> {
                 />
                     
                 <Button text="Add" className="buttonForm blue darken-4" handleClick={handleAdd} />
-                <Button text="Delete" className="buttonForm blue darken-4" handleClick={handleDelete} />
                     
             </form>
         </div>

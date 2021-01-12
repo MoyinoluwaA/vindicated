@@ -3,7 +3,7 @@ import Navbar from '../Navbar/index'
 import Dashboardnav from '../Dashboardnav/index'
 import Input from '../../Components/TextInput'
 import Button from '../../Components/Button'
-import {auth, firestore} from '../../config/firebase'
+import {firestore} from '../../config/firebase'
 import {useHistory} from 'react-router-dom'
 import {Row,Col} from 'react-materialize'
 

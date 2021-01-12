@@ -24,12 +24,12 @@ const Index= ()=> {
             }
         }
         getTestimonial()
-    },[])
+    },[uid])
 
     console.log(userTestimonial.length)
 
     return (
-        <div className=" testimonial blue lighten-5" id="testimonial" >
+        <div className=" testimonial white" id="testimonial" >
             <h4 className="center-align"> Testimonials</h4>
             <div className="testimonial-body">
                 {userTestimonial.length === 0? (
@@ -41,7 +41,7 @@ const Index= ()=> {
                         <div>
                             <Col m={4} s={12}>
                                 <Card
-                                className="blue-grey darken-1"
+                                className="blue darken-4"
                                 closeIcon={<Icon>close</Icon>}
                                 revealIcon={<Icon>more_vert</Icon>}
                                 textClassName="white-text"

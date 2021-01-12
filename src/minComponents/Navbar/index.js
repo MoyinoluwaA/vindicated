@@ -48,10 +48,10 @@ const Index= () =>{
         className="white z-depth-0"
         >
     
-            <NavLink to="/" className="black-text" style={{backgroundColor: "transparent"}} >
+            <NavLink to="/" className="black-text welcome" style={{backgroundColor: "transparent"}} >
                 Welcome {user} !
             </NavLink>
-            <NavLink to="/" className="black-text" onClick={handleLogout} >
+            <NavLink to="/" className="black-text logoutlink" onClick={handleLogout} >
                 Logout
             </NavLink>
         </Navbar>

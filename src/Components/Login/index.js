@@ -8,7 +8,6 @@ const Index = () => {
     const [email,setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorEmail, setErrorEmail] = useState('');
-    const [errorPassword, setErrorPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const history = useHistory()
 
@@ -47,7 +46,7 @@ const Index = () => {
             } else if (error.code === 'auth/wrong-password'){
                 setErrorMessage('Invalid email address or password')
             } else if (error.code === 'auth/invalid-email'){
-                // setErrorEmail(error.message)
+                setErrorEmail(error.message)
             }
 
         }

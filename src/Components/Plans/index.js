@@ -5,7 +5,7 @@ import Card from '../Card/index'
 
 const Index= () => {
     return (
-        <div className="blue lighten-5" id="investment-plans">
+        <div className="indigo accent-1" id="investment-plans">
             <h4 className="Plan-heading center-align"> Our Investment Plans</h4>
             <Row className="Plans">
                 <Col m={4} s={12} >
